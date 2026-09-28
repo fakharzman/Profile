@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Qasim - Profile</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-black min-h-screen flex items-center justify-center p-4 md:p-8">
+
+    <div class="max-w-5xl w-full bg-white border border-gray-200 rounded-2xl shadow-xl p-6 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        <!-- Left Sidebar / Profile Card -->
+        <div class="md:col-span-4 flex flex-col items-center text-center md:items-start md:text-left border-b md:border-b-0 md:border-r border-gray-200 pb-8 md:pb-0 md:pr-8">
+            <div class="relative group mb-5">
+                <img id="" src="WhatsApp Image 2026-09-19 at 6.55.20 AM.jpeg" alt="Muhammad Qasim" class="w-36 h-36 md:w-44 md:h-44 object-cover rounded-2xl shadow-sm border-2 border-black group-hover:scale-105 transition-all duration-300">
+                <span class="absolute bottom-2 right-2 w-4 h-4 bg-black border-2 border-white rounded-full" title="Online"></span>
+            </div>
+
+            <h1 id="display-name" class="text-2xl font-bold text-black tracking-wide">Muhammad Qasim</h1>
+            <p id="display-title" class="text-gray-600 font-medium text-sm mt-1">Web Developer</p>
+            <p id="display-location" class="text-gray-500 text-xs mt-1 flex items-center gap-1">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-black"></i> Multan, Pakistan
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex items-center gap-3 mt-6 w-full">
+                <button onclick="openModal('edit-modal')" class="flex-1 bg-black hover:bg-gray-800 text-white font-semibold text-xs md:text-sm py-2.5 px-4 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2">
+                    <i data-lucide="user-cog" class="w-4 h-4"></i> Edit profile
+                </button>
+                <button onclick="openModal('settings-modal')" class="bg-white border border-gray-300 hover:border-black text-black font-medium text-xs md:text-sm py-2.5 px-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2">
+                    <i data-lucide="settings" class="w-4 h-4"></i> Settings
+                </button>
+            </div>
+
+            <div class="w-full border-t border-gray-200 my-6"></div>
+
+            <!-- Quick Info Links -->
+            <div class="w-full space-y-3 text-xs md:text-sm text-gray-700">
+                <div class="flex items-center gap-3 overflow-hidden">
+                    <i data-lucide="mail" class="w-4 h-4 text-black flex-shrink-0"></i>
+                    <span id="side-email" class="truncate font-medium">mqasimfiaz564@gmail.com</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i data-lucide="phone" class="w-4 h-4 text-black flex-shrink-0"></i>
+                    <span id="side-phone" class="font-medium">03099476218</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i data-lucide="clock" class="w-4 h-4 text-black flex-shrink-0"></i>
+                    <span id="side-timezone" class="font-medium">+5 GMT (Pakistan)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content Area -->
+        <div class="md:col-span-8 space-y-8">
+            
+            <!-- About Section -->
+            <div>
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-1.5 h-5 bg-black rounded-full"></div>
+                    <h2 class="text-lg font-bold text-black">About</h2>
+                </div>
+                <p id="about-text" class="text-gray-600 text-sm leading-relaxed">
+                    Web developer based in Multan, building clean, fast and accessible interfaces with HTML, CSS and JavaScript. Comfortable turning a design into a working front-end and sweating the small details along the way.
+                </p>
+            </div>
+
+            <!-- Skills Section -->
+            <div>
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-1.5 h-5 bg-black rounded-full"></div>
+                    <h2 class="text-lg font-bold text-black">Skills</h2>
+                </div>
+                <div class="flex flex-wrap gap-2.5" id="skills-list">
+                    <span class="bg-white text-black border border-black px-3.5 py-1.5 rounded-lg text-xs font-bold tracking-wide shadow-sm">HTML</span>
+                    <span class="bg-white text-black border border-black px-3.5 py-1.5 rounded-lg text-xs font-bold tracking-wide shadow-sm">CSS</span>
+                    <span class="bg-white text-black border border-black px-3.5 py-1.5 rounded-lg text-xs font-bold tracking-wide shadow-sm">JavaScript</span>
+                </div>
+            </div>
+
+            <!-- Details Section -->
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-1.5 h-5 bg-black rounded-full"></div>
+                    <h2 class="text-lg font-bold text-black">Details</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs md:text-sm">
+                    <!-- First Name -->
+                    <div>
+                        <label class="text-gray-500 font-medium block mb-1 text-xs">First name</label>
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-black font-semibold">
+                            Muhammad
+                        </div>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div>
+                        <label class="text-gray-500 font-medium block mb-1 text-xs">Last name</label>
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-black font-semibold">
+                            Qasim
+                        </div>
+                    </div>
+
+                    <!-- Time zone -->
+                    <div>
+                        <label class="text-gray-500 font-medium block mb-1 text-xs">Time zone</label>
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-black font-semibold">
+                            +5 GMT (Pakistan)
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div>
+                        <label class="text-gray-500 font-medium block mb-1 text-xs">Phone</label>
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-black font-semibold flex justify-between items-center">
+                            <span>03099476218</span>
+                        </div>
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="sm:col-span-2">
+                        <label class="text-gray-500 font-medium block mb-1 text-xs">Email address</label>
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2 text-black font-semibold flex justify-between items-center">
+                            <span class="truncate">mqasimfiaz564@gmail.com</span>
+                            <button onclick="copyEmail('mqasimfiaz564@gmail.com')" class="ml-2 bg-white hover:bg-gray-100 border border-gray-300 text-black text-xs px-3 py-1 rounded-lg transition-colors flex items-center gap-1 flex-shrink-0 font-medium">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+        <div class="bg-white border border-gray-200 rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+            <h3 class="text-lg font-bold text-black mb-4">Edit Profile</h3>
+            <div class="space-y-4 text-xs md:text-sm">
+                <div>
+                    <label class="text-gray-600 font-medium block mb-1">Full Name</label>
+                    <input id="input-name" type="text" value="Muhammad Qasim" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3 py-2 text-black focus:outline-none focus:border-black focus:ring-1 focus:ring-black">
+                </div>
+                <div>
+                    <label class="text-gray-600 font-medium block mb-1">Title</label>
+                    <input id="input-title" type="text" value="Web Developer" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3 py-2 text-black focus:outline-none focus:border-black focus:ring-1 focus:ring-black">
+                </div>
+                <div>
+                    <label class="text-gray-600 font-medium block mb-1">Phone Number</label>
+                    <input id="input-phone" type="text" value="03099476218" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3 py-2 text-black focus:outline-none focus:border-black focus:ring-1 focus:ring-black">
+                </div>
+                <div>
+                    <label class="text-gray-600 font-medium block mb-1">Email</label>
+                    <input id="input-email" type="email" value="mqasimfiaz564@gmail.com" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3 py-2 text-black focus:outline-none focus:border-black focus:ring-1 focus:ring-black">
+                </div>
+            </div>
+            <div class="flex justify-end gap-3 mt-6">
+                <button onclick="closeModal('edit-modal')" class="bg-white hover:bg-gray-100 border border-gray-300 text-black px-4 py-2 rounded-xl text-xs font-semibold">Cancel</button>
+                <button onclick="saveProfile()" class="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-xl text-xs font-semibold">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+        <div class="bg-white border border-gray-200 rounded-2xl max-w-sm w-full p-6 shadow-2xl relative">
+            <h3 class="text-lg font-bold text-black mb-4">Settings</h3>
+            <div class="space-y-4 text-xs md:text-sm">
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-700 font-medium">Notifications</span>
+                    <input type="checkbox" checked class="accent-black w-4 h-4">
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-700 font-medium">Public Visibility</span>
+                    <input type="checkbox" checked class="accent-black w-4 h-4">
+                </div>
+            </div>
+            <div class="flex justify-end mt-6">
+                <button onclick="closeModal('settings-modal')" class="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-xl text-xs font-semibold">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-black text-white font-medium text-xs px-4 py-2.5 rounded-xl shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none">
+        Email copied to clipboard!
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Copy Email Functionality
+        function copyEmail(email) {
+            navigator.clipboard.writeText(email);
+            const toast = document.getElementById('toast');
+            toast.classList.remove('opacity-0');
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+            }, 2000);
+        }
+
+        // Modal Control Functions
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.getElementById(id).classList.add('flex');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.getElementById(id).classList.remove('flex');
+        }
+
+        // Save Profile Logic
+        function saveProfile() {
+            const name = document.getElementById('input-name').value;
+            const title = document.getElementById('input-title').value;
+            const phone = document.getElementById('input-phone').value;
+            const email = document.getElementById('input-email').value;
+
+            document.getElementById('display-name').innerText = name;
+            document.getElementById('display-title').innerText = title;
+            document.getElementById('side-phone').innerText = phone;
+            document.getElementById('side-email').innerText = email;
+
+            closeModal('edit-modal');
+        }
+    </script>
+</body>
+</html>
